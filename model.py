@@ -21,7 +21,7 @@ class Model(db.Model):
     brand_name = db.Column(db.String(20), nullable=False)
     name = db.Column(db.String(20), db.ForeignKey('brands.name'), nullable=False)
     
-    brand = db.relationship("Brand", backref="model")
+    brand = db.relationship("Brand", backref=db.backref("model"))
 
 
 class Brand(db.Model):
